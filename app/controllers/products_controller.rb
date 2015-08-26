@@ -4,7 +4,9 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+
+  @products = Product.search(params[:index])  
+
   end
 
   # GET /products/1
@@ -14,8 +16,8 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @product = Product.new(category_id: params[:category_id])
-    @category = Category.find(params[:category_id])
+    @product = Product.new(product_id: params[:product_id])
+    @product = product.find(params[:product_id])
 
   end
 

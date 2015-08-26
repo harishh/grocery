@@ -13,12 +13,11 @@
     </tr>
   </thead>
   
-  <%= form_tag (categories_path, :method => 'get',id:"search-form") do %>
-      
-  <%= text_field_tag :search, params [:search], placeholder: "Search Categories" %>
-  <%= submit_tag "Search" %>
-  <% end %>
-    
+    <%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
 
   <tbody>
     <% @categories.each do |category| %>

@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
      if params[:search]
       @categories = Category.search(params [:search]).order("created_at DESC")
     else
-    @categories = Category.all.order('created_at DESC')
+      @categories = Category.all.order('created_at DESC')
     end
     
   end
