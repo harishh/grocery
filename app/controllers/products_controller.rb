@@ -9,7 +9,9 @@ class ProductsController < ApplicationController
   end
   
   def show_item
+    
     @abc = Product.where("name = ?", params[:q])
+    #binding.pry
 
   end
 
@@ -24,9 +26,9 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @product = Product.new(product_id: params[:product_id])
-    
-
+     @product = Product.new(category_id: params[:category_id])
+     @category=Category.find(params[:category_id])
+     #binding.pry
   end
 
   # GET /products/1/edit

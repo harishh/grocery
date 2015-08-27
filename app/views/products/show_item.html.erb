@@ -1,11 +1,12 @@
-<% @abc.each do |abc| %>
 
-  <%= abc.name %>
-  <%= abc.discription %>
-  <%= abc.weight_lbs %>
-  <%= abc.price %>
-  
-
-
- <% end %>
+<% if @abc.blank? %>
+  Not Found
+<% else %>
+   <% @abc.each do |abc| %>
+	  <%= abc.name %>
+	  <%= abc.discription %>
+	  <%= abc.weight_lbs %>
+	  <%= abc.price %>
+  <% end %> 
+<% end %>
 

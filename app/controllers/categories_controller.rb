@@ -5,14 +5,10 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
-     if params[:search]
-      @categories = Category.search(params [:search]).order("created_at DESC")
-    else
-      @categories = Category.all.order('created_at DESC')
-    end
+     
     
   end
-
+  
   # GET /categories/1
   # GET /categories/1.json
   def show
@@ -22,6 +18,7 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new
+
   end
 
   # GET /categories/1/edit
