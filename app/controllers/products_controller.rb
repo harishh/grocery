@@ -5,19 +5,27 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
 
-  @products = Product.search(params[:index])  
+  @products = Product.all
+  end
+  
+  def show_item
+    @abc = Product.where("name = ?", params[:q])
 
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+
+    
+    @abc = Product.where("name = ?", params[:q])
+    
   end
 
   # GET /products/new
   def new
     @product = Product.new(product_id: params[:product_id])
-    @product = product.find(params[:product_id])
+    
 
   end
 
