@@ -6,6 +6,7 @@ class CreateProducts < ActiveRecord::Migration
       t.integer :weight_lbs
       t.integer :price
       t.integer :category_id
+      
 
       t.timestamps null: false
     end

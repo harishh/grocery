@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   
   def show_item
     
-    @abc = Product.where("name = ?", params[:q])
+    @abc = Product.where("name LIKE ?", params[:q])
     #binding.pry
 
   end
